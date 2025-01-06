@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Asset Request</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Employee Asset Request Portal</h1>
+    </nav>
+
+    <div class="container">
+        <div class="request-form">
+            <h2 class="form-title">Request New Asset</h2>
+            <form id="assetRequestForm" novalidate>
+                <div class="form-group">
+                    <label for="employeeName">Employee Name</label>
+                    <input type="text" id="employeeName" required>
+                    <div class="error-message" id="employeeNameError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="employeeID">Employee ID</label>
+                    <input type="text" id="employeeID" required>
+                    <div class="error-message" id="employeeIDError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="assetType">Asset Type</label>
+                    <select id="assetType" required>
+                        <option value="">Select an Asset</option>
+                        <option value="Welcome Kit">Welcome Kit</option>
+                        <option value="Laptop">Laptop</option>
+                        <option value="Mouse">Mouse</option>
+                        <option value="Charger">Charger</option>
+                    </select>
+                    <div class="error-message" id="assetTypeError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="requestDate">Request Date</label>
+                    <input type="date" id="requestDate" required>
+                    <div class="error-message" id="requestDateError"></div>
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="asset-request.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Asset Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>HR Asset Management Portal</h1>
+    </nav>
+
+    <div class="container">
+        <div class="dashboard">
+            <div class="stat-card">
+                <h3>Total Requests</h3>
+                <div id="totalRequests" class="number">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Pending Requests</h3>
+                <div id="pendingRequests" class="number">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Approved Requests</h3>
+                <div id="approvedRequests" class="number">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Rejected Requests</h3>
+                <div id="rejectedRequests" class="number">0</div>
+            </div>
+        </div>
+
+        <div class="requests-table">
+            <h2 class="table-title">Asset Requests</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Employee ID</th>
+                        <th>Asset Type</th>
+                        <th>Request Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="requestsTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="hr-management.js"></script>
+</body>
+</html>
